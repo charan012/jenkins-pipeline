@@ -12,7 +12,7 @@ node('slavenode') {
         }
 
         stage('Build') {
-            sh "${mvnHome}/bin/mvn clean compile" 
+            sh "${mvnHome}/bin/mvn clean compile"
         }
 
         stage('Test') {
@@ -31,3 +31,9 @@ node('slavenode') {
         def duration = (endTime - startTime) / 1000
 
         echo "Scripted pipeline executed successfully in ${duration} seconds"
+
+    } catch (Exception e) {
+        echo "Pipeline failed: ${e.message}"
+        throw e
+    }
+}
