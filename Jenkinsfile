@@ -35,7 +35,7 @@ node('slavenode') {
         emailext(
             subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
             body: """
-Hello SRAVAN,
+Hello Charan,
 
 Your scripted Jenkins pipeline completed successfully.
 
