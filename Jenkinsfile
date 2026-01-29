@@ -4,7 +4,6 @@ node('slavenode') {
     def mvnHome = tool 'maven3'
 
     try {
-
         stage('Checkout') {
             git branch: 'main',
                 credentialsId: 'gitcreds',
